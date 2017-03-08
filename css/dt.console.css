@@ -1,0 +1,148 @@
+.dt-console>.dt-menubar {
+  display: block;
+}
+
+.dt-console>.dt-output {
+  position: absolute;
+  left: 0;
+  overflow: auto;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  white-space: pre;
+  bottom: 100px;
+  overflow-y: scroll;
+  border-bottom: 1px solid #888;
+}
+
+.dt-console>.dt-output>dt-entry {
+  display: block;
+  border-bottom: 1px solid #888;
+  padding: 0.5em 0.5em 0.5em 2em;
+  position: relative;
+  overflow: auto;
+}
+
+.dt-output>dt-entry:last-child {
+  border-bottom: none;
+}
+
+.dt-console>.dt-output>dt-entry[type="input"]::before,
+.dt-console>.dt-output>dt-entry[type="output"]::before,
+.dt-console>.dt-output>dt-entry[type="info"]::before,
+.dt-console>.dt-output>dt-entry[type="warn"]::before,
+.dt-console>.dt-output>dt-entry[type="error"]::before,
+.dt-console>.dt-output>dt-entry[type="uncaught"]::before {
+  color: #fff;
+  display: inline-block;
+  font-weight: 700;
+  text-align: center;
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  top: 0.4em;
+  left: 0.3em;
+  font-size: 1em;
+  border-radius: 1.4em;
+  padding: 0.2em;
+  line-height: 1em;
+}
+
+.dt-console>.dt-output>dt-entry[type="input"]::before {
+  color: #44f;
+  content: ">";
+}
+
+.dt-console>.dt-output>dt-entry[type="output"]::before {
+  color: #aaa;
+  content: "<";
+}
+
+.dt-console>.dt-output>dt-entry[type="input"]>.dt-expander>.dt-entry>span {
+  color: #0aa;
+}
+
+.dt-console>.dt-output>dt-entry[type="info"]::before {
+  content: 'i';
+  background-color: #00f;
+}
+
+.dt-console>.dt-output>dt-entry[type="warn"]::before {
+  content: '!';
+  background-color: #ff0;
+  color: #444;
+}
+
+.dt-console>.dt-output>dt-entry[type="error"]::before,
+.dt-console>.dt-output>dt-entry[type="uncaught"]::before {
+  content: 'X';
+  background-color: #f00;
+}
+
+.dt-console>.dt-output>dt-entry[type="error"]>.dt-expander>.dt-entry>span,
+.dt-console>.dt-output>dt-entry[type="uncaught"]>.dt-expander>.dt-entry>span {
+  color: #f00;
+}
+
+.dt-console>.dt-output>dt-entry[type="info"] {
+  background: rgba(0, 0, 255, 0.1);
+}
+
+.dt-console>.dt-output>dt-entry[type="warn"] {
+  background: rgba(255, 255, 0, 0.1);
+}
+
+.dt-console>.dt-output>dt-entry[type="error"],
+.dt-console>.dt-output>dt-entry[type="uncaught"] {
+  background: rgba(255, 0, 0, 0.1);
+}
+
+.dt-console .dt-expander {
+  white-space: nowrap;
+}
+
+.dt-console>.dt-input {
+  display: table;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  padding-left: 13px;
+}
+
+.dt-console>.dt-input::before {
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 5px;
+  content: ">";
+  font: 700 13px/13px monospace;
+  color: #44f;
+}
+
+.dt-console>.dt-input>div,
+.dt-console>.dt-input>button {
+  box-sizing: border-box;
+  vertical-align: top;
+  display: table-cell;
+}
+
+.dt-console>.dt-input>div,
+.dt-console>.dt-input>div>textarea {
+  width: 100%;
+  height: 100%;
+}
+
+.dt-console>.dt-input>div>textarea {
+  display: block;
+  box-sizing: border-box;
+  padding: 0;
+  border: none;
+  margin: 0;
+  resize: none;
+  outline: 0;
+}

@@ -1,0 +1,81 @@
+.dt-expander {
+  display: block;
+  font: 1em/1.3em monospace;
+}
+
+.dt-expander>.dt-expander {
+  display: none;
+  padding: 0 0.2em 0 1em;
+}
+
+.dt-expander>.dt-entry {
+  display: inline-block;
+}
+
+.dt-expander>.dt-entry::before {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  text-align: center;
+  -webkit-transition: transform 0.3s;
+  -o-transition: transform 0.3s;
+  transition: transform 0.3s;
+  transform: rotate(0deg);
+}
+
+.dt-expander>.dt-expander>.dt-entry::before {
+  content: "";
+}
+
+.dt-expander>.dt-entry[data-expandable]::before {
+  content: ">";
+}
+
+.dt-expander[data-open]>.dt-entry[data-expandable]::before {
+  transform: rotate(90deg);
+}
+
+.dt-expander[data-open]>.dt-expander {
+  display: block;
+}
+
+.dt-expander>.dt-entry>span {
+  opacity: 0.75;
+}
+
+.dt-expander>.dt-entry>span[data-type="symbol"] {
+  color: #0a0;
+}
+
+.dt-expander>.dt-entry>span[data-type="string"] {
+  color: #a00;
+}
+
+.dt-expander>.dt-entry>span[data-type="regex"] {
+  color: #aa0;
+}
+
+.dt-expander>.dt-entry>span[data-type="number"] {
+  color: #00a;
+}
+
+.dt-expander>.dt-entry>span[data-type="boolean"] {
+  color: #0aa;
+}
+
+.dt-expander>.dt-entry>span[data-type="null"] {
+  color: #aaa;
+}
+
+.dt-expander>.dt-entry>span.dt-key[data-type="string"] {
+  color: #a0a;
+}
+
+.dt-expander>.dt-entry[data-enumerable]>span {
+  opacity: 1;
+}
+
+.dt-expander>.dt-entry>.dt-value[data-type="uncaught"] {
+  color: #f00;
+}

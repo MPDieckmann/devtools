@@ -1,0 +1,56 @@
+.dt-view {
+  width: 100%;
+  height: 100%;
+  color: #444;
+  font: 12px/1em monospace;
+  box-sizing: border-box;
+  border: 1px solid #888;
+}
+
+.dt-view>header {
+  background: #eee;
+  padding-bottom: 0;
+  position: relative;
+}
+
+.dt-view>header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-bottom: 1px solid #888;
+  z-index: 0;
+}
+
+.dt-view>header>button {
+  background: none;
+  padding: 0.25em 0.5em;
+  margin: 0 0.25em;
+  border: none;
+  border-left: 1px solid #888;
+  border-right: 1px solid #888;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.dt-view>header>button.active {
+  background: #fff;
+}
+
+.dt-view>header>button.active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-bottom: 1px solid #fff;
+  z-index: 1;
+}
+
+.dt-view>section {
+  width: 100%;
+  height: 100%;
+}

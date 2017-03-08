@@ -1,0 +1,116 @@
+.tab-view {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+  -moz-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  -o-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+}
+
+.tab-view>header,
+.list-view>li,
+.button-group {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -moz-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  -o-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+}
+
+.tab-view>header,
+.button-group {
+  overflow: auto;
+  flex: 0 0 auto;
+}
+
+.tab-view>header button {
+  white-space: nowrap;
+}
+
+.tab-view>section {
+  flex: 1 1 100%;
+  display: none;
+  position: relative;
+}
+
+.tab-view>section.active {
+  display: block;
+}
+
+.list-view {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.list-view>li {
+  overflow: hidden;
+}
+
+.button-group button {
+  margin: 0.125em;
+  white-space: nowrap;
+}
+
+.dialog-overlay {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  background: rgba(0, 0, 0, 0.25);
+  overflow: auto;
+}
+
+dialog.dialog-view {
+  display: block;
+  position: static;
+  margin: 1em auto;
+  border: 1px solid #000;
+  background: #fff;
+  font: inherit;
+  z-index: 9999;
+  min-width: 200px;
+  width: 100%;
+  max-width: 400px;
+  padding: 0;
+  -webkit-box-shadow: 0 0 1em 0 #000;
+  box-shadow: 0 0 1em 0 #000;
+}
+
+dialog.dialog-view div {
+  padding: 0.5em 0.5em 0;
+}
+
+dialog.dialog-view header {
+  border-bottom: inherit;
+  padding: 0.5em;
+  margin: 0;
+}
+
+dialog.dialog-view footer {
+  border-top: inherit;
+  padding: 0.375em 0.375em;
+  margin-top: 0.5em;
+}
+
+dialog.dialog-view footer button {
+  border-top: inherit;
+}
+
+dialog.dialog-view textarea {
+  display: block;
+  width: 100%;
+  height: 100px;
+  resize: vertical;
+  padding: 0.25em;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
