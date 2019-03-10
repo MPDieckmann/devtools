@@ -15,10 +15,11 @@ var DeveloperTools = (function () {
 
     // add other things to the header
 
-    var func;
-    for (func of registered) {
-      func.apply(this, arguments);
-    };
+    var $this = this;
+    var $arguments = arguments;
+    registered.forEach(function (func) {
+      func.apply($this, $arguments);
+    });
   };
   DeveloperTools.register = function (func) {
     if (typeof func == "function") {
